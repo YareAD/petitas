@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:background="@drawable/fondo"
     tools:context=".inicioSesion">
 
@@ -14,63 +13,72 @@
         android:layout_width="325dp"
         android:layout_height="162dp"
         android:layout_marginStart="40dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="500dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.101"
-        app:srcCompat="@drawable/logo" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/email"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="352dp"
-        android:drawableStart="@drawable/password"
-        android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:text="COntraseña" />
-
-    <EditText
-        android:id="@+id/editTextTextEmailAddress"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="50dp"
+        android:layout_marginTop="52dp"
         android:layout_marginEnd="50dp"
         android:drawableStart="@drawable/email"
         android:ems="10"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="234dp"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        android:hint="@string/correo_gmail_com"
         tools:text="Email" />
 
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="50dp"
+        android:drawableStart="@drawable/password"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email"
+        tools:ignore="MissingConstraints"
+        android:hint="**************"
+        tools:text="Contraseña" />
+
     <Button
-        android:id="@+id/btnRegistro"
+        android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
         android:text="Iniciar Sesion"
-        tools:layout_editor_absoluteX="130dp"
-        tools:layout_editor_absoluteY="422dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/labelRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="REGISTRARSE"
-        tools:layout_editor_absoluteX="160dp"
-        tools:layout_editor_absoluteY="600dp"
-        tools:ignore="MissingConstraints" />
+        android:layout_marginTop="136dp"
+        android:layout_marginBottom="94dp"
+        android:text="@string/registrarse"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRegistro"
+        tools:ignore="MissingConstraints"
+        android:clickable="true"
+        android:focusable="true" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

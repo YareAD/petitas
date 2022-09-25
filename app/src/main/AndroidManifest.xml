@@ -16,11 +16,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Permisos"
         tools:targetApi="31">
+        <activity android:name=".inicioSesion" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".registro" android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".inicioSesion"
-            android:exported="false" />
-        <activity
-            android:name=".login"
+            android:name=".splashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

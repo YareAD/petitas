@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "138508245189",
+    "project_id": "petitas-c40f3",
+    "storage_bucket": "petitas-c40f3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:138508245189:android:0c394945f3d3eb3dee78ac",
+        "android_client_info": {
+          "package_name": "com.example.permisos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "138508245189-d12oectplbgf5nponmgcnrl2nb0on1d7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9qzKxg9MCS61b2HEdvPvQU3PGo1ydN-g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "138508245189-d12oectplbgf5nponmgcnrl2nb0on1d7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
