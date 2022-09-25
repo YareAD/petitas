@@ -14,13 +14,12 @@
         android:layout_width="325dp"
         android:layout_height="162dp"
         android:layout_marginStart="40dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="40dp"
         android:src="@drawable/logo"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.073" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/name"
@@ -59,31 +58,32 @@
         android:hint="correo@gmail.com"
         tools:text="Correo" />
 
+
     <EditText
         android:id="@+id/password"
         android:layout_width="307dp"
         android:layout_height="60dp"
         android:layout_marginStart="50dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="276dp"
         android:drawableStart="@drawable/password"
         android:ems="10"
+        android:hint="************"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email"
-        android:hint="************"
         tools:text="COntraseña" />
-
 
     <Button
         android:id="@+id/btnRegistro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="104dp"
+        android:layout_marginBottom="174dp"
         android:text="Registrarse"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"

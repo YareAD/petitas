@@ -1,5 +1,6 @@
 package com.example.permisos;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
@@ -8,14 +9,25 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class inicioSesion extends AppCompatActivity {
 
     final private int REQUEST_CODE_ASK_PERMISSION=111;
+
+    private FirebaseAuth mAuth;
+    private String TAG = "information";
 
     private TextView labelRegister;
     private EditText email;
@@ -26,6 +38,7 @@ public class inicioSesion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.inicio_sesion);
         solicitarPermisos();
+        mAuth = FirebaseAuth.getInstance();
         findElements();
         listenersElements();
     }
@@ -54,7 +67,26 @@ public class inicioSesion extends AppCompatActivity {
                 String passwordValue = password.getText().toString();
                 //logica del login con firebase cuando haya internet
 
-                login.setEnabled(true);
+                mAuth.signInWithEmailAndPassword(emailValue, passwordValue)
+                        .addOnCompleteListener(inicioSesion.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    FirebaseUser user = mAuth.getCurrentUser();
+                                    Toast.makeText(inicioSesion.this, "Iniciaste sesion.", Toast.LENGTH_SHORT).show();
+                                    Log.d(TAG, user.toString());
+
+                                    //limpiar campos
+                                    email.setText("");
+                                    password.setText("");
+
+                                } else {
+                                    Log.w(TAG, "signInWithEmail:failure", task.getException());
+                                    Toast.makeText(inicioSesion.this, "Las credenciales no son correctas.", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+
             }
         });
 
